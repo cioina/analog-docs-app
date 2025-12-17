@@ -27,8 +27,10 @@ const config: Config = {
   // Enable mermaid diagrams
   markdown: {
     mermaid: true,
-  },
-  // Even if you don't use internalization, you can use this field to set useful
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    }
+  },  // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
@@ -42,7 +44,6 @@ const config: Config = {
   },
   favicon: 'img/favicon.ico',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
   organizationName,
   plugins: [
     // Rsdoctor plugin for build analysis (enabled via RSDOCTOR=true environment variable)
