@@ -29,8 +29,10 @@ const config: Config = {
     mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'throw',
+      onBrokenMarkdownImages: 'throw',
     }
-  },  // Even if you don't use internalization, you can use this field to set useful
+  },
+  // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
@@ -174,10 +176,10 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  // Add mermaid theme
-  themes: ['@docusaurus/theme-mermaid'],
   projectName,
   tagline: 'The fullstack Angular meta-framework',
+  // Add mermaid theme
+  themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
@@ -282,13 +284,17 @@ const config: Config = {
     },
     prism: {
       defaultLanguage: 'typescript',
+
       theme: themes.nightOwlLight,
       darkTheme: themes.nightOwl,
       additionalLanguages: ['toml', 'json', 'bash'],
     },
     // Mermaid diagram configuration
     mermaid: {
-      theme: { light: 'neutral', dark: 'forest' },
+      theme: {
+        light: 'neutral',
+        dark: 'forest'
+      },
       options: {
         maxTextSize: 9999,
       },
