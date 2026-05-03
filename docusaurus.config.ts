@@ -21,7 +21,7 @@ const config: Config = {
   baseUrl: '/',
   // Performance improvements with Docusaurus Faster and v4 future flags
   future: {
-    experimental_faster: true,
+    faster: true,
     v4: true,
   },
   // Enable mermaid diagrams
